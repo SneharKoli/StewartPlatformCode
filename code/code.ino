@@ -59,11 +59,14 @@ void setup() {
 }
 
 void loop() {
-  // Array
+  // Array containing position of each stepper motor
   long positions[6];
 
   // Reading the joystick (potentiometer) value
-  positions[0,1,2,3,4,5] = analogRead(A5);
+  int potValue = analogRead(A5);
+  for (int i = 0; i < 6; i++) {
+    positions[i] = potValue;
+  }
   
   /* Set the target positions of all managed steppers
    * according to a coordinate array. New speeds will be
