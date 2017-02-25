@@ -77,5 +77,5 @@ void loop() {
    * STEPPER MOTORS ARE POSITIONED COMPLETELY.
    */
   steppers.runSpeedToPosition();
-  delay(1000);
+  delay(500);
 }
