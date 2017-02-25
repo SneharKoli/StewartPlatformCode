@@ -32,10 +32,10 @@
 */
 AccelStepper stepper1(AccelStepper::DRIVER, 2, 3);
 AccelStepper stepper2(AccelStepper::DRIVER, 4, 5);
-AccelStepper stepper1(AccelStepper::DRIVER, 6, 7);
-AccelStepper stepper2(AccelStepper::DRIVER, 8, 9);
-AccelStepper stepper1(AccelStepper::DRIVER, 10, 11);
-AccelStepper stepper2(AccelStepper::DRIVER, 22, 23);
+AccelStepper stepper3(AccelStepper::DRIVER, 6, 7);
+AccelStepper stepper4(AccelStepper::DRIVER, 8, 9);
+AccelStepper stepper5(AccelStepper::DRIVER, 10, 11);
+AccelStepper stepper6(AccelStepper::DRIVER, 22, 23);
 
 MultiStepper steppers;
 
@@ -61,10 +61,9 @@ void setup() {
 void loop() {
   // Array
   long positions[6];
-  
-  positions[0] = analogRead(A5); // initial 50
-  Serial.println(positions[0]);
-  positions[1] = positions[0];
+
+  // Reading the joystick (potentiometer) value
+  positions[0,1,2,3,4,5] = analogRead(A5);
   
   /* Set the target positions of all managed steppers
    * according to a coordinate array. New speeds will be
@@ -79,13 +78,4 @@ void loop() {
    */
   steppers.runSpeedToPosition();
   delay(1000);
-  
-  // Move to a different coordinate.
-  /*
-  positions[0] = 0;
-  positions[1] = 0;
-  steppers.moveTo(positions);
-  steppers.runSpeedToPosition();
-  delay(1000);
-  */
 }
