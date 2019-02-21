@@ -7,7 +7,7 @@
  * 
  * Contributions made by
  * - Navin Sridhar
- * - K Harikiran
+ * - Snehar Koli
  * - Shivam Pandit
 */
 
